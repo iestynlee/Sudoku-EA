@@ -19,8 +19,6 @@ def population(pop_size, grid):
 				if copy[j][k] is not None:
 					population[j][k] = copy[j][k]
 
-					#shuffle_sub_grid.remove(copy[j][k])
-
 			for k in range(len(copy)):
 				if population[j][k] is None:
 					population[j][k] = shuffle_sub_grid.pop()
@@ -104,8 +102,6 @@ def crossover_pop(mating_pool):
 	childs[0] = [:point] + [point:]
 	childs[1] = [:point] + [point:]
 	return childs
-
-	#return [ crossover_ind(choice(mating_pool), choice(mating_pool)) for _ in range(POPULATION_SIZE) ]
 
 def crossover_ind(individual1, individual2):
 	return [ choice(pair) for pair in zip(individual1, individual2) ]
